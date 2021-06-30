@@ -10,7 +10,7 @@ class Article extends Component {
           <h5 className='card-title'>{title}</h5>
           <h6 className='card-text'>{publishedAt}</h6>
           <p className='card-text'>{description}</p>
-          <a href={url} className='btn btn-primary'>
+          <a href={url} target='_blank' rel='noreferrer' className='btn btn-primary'>
             Read original article
           </a>
         </div>
