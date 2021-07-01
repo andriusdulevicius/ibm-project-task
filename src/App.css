@@ -1,7 +1,59 @@
+/* Article styles */
+
 .one-article {
   min-width: 250px;
 }
 
 .articles-h2 {
   text-align: center;
+}
+
+/* Error styles */
+.error-msg {
+  color: red;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+/* Search Bar styles */
+.navbar-style {
+  background-color: rgba(70, 68, 68, 0.829);
+}
+.navbar-style a {
+  color: #007bff;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.navbar-title {
+  font-size: 2rem;
+  align-self: center;
+}
+
+.navbar-title:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.main-form {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-block {
+  position: relative;
+}
+
+.input-block span {
+  font-size: 14px;
+  position: absolute;
+  top: -22px;
 }
