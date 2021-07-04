@@ -10,7 +10,7 @@ const Article = (props) => {
 
   return (
     <div className='col-12 col-sm-6 col-lg-4 w-80 card one-article'>
-      <img src={image} className='card-img-top pt-3' alt='...' />
+      <img src={image} className='card-img-top ' alt={title} />
       <div className='card-body'>
         <h5 className='card-title'>{title}</h5>
         <h6 className='card-text'>{publishedAt}</h6>

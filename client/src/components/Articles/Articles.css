@@ -1,9 +1,14 @@
 /* Article styles */
 
 .one-article {
-  min-width: 250px;
+  padding: 1rem !important;
+  border: none !important;
 }
 
 .articles-h2 {
   text-align: center;
+}
+
+.card-body {
+  padding: 10px 0 0 0 !important;
 }

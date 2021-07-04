@@ -10,7 +10,7 @@ const SearchBar = ({ getWantedArticles }) => {
   const handleSubmit = (e) => {
     e.target.searchInput.value = '';
     e.preventDefault();
-    if (inputValue.length === 0) setInputError('empty');
+    if (inputValue.trim().length === 0) setInputError('empty');
     else {
       getWantedArticles(inputValue);
       logSearch({ title: inputValue });
