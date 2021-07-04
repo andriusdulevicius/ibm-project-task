@@ -10,7 +10,7 @@ export const getArticles = async (searchingFor) => {
   }
 };
 
-const loggerApiUrl = `http://${process.env.HEROKU_HOST || 'localhost:5000'}/api`;
+const loggerApiUrl = `https://ibm-project-user-actions.herokuapp.com/api`;
 const reqOptions = {
   mode: 'cors',
   cache: 'no-cache',

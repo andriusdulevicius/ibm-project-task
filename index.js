@@ -4,8 +4,8 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const actionsApi = require('./api/userActions');
-
-const PORT = process.env.SERVER_PORT || 5002;
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 app.use(
   cors()
@@ -17,6 +17,16 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', actionsApi);
+
+const rootBuild = path.join(__dirname, 'client', 'build');
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(rootBuild));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(rootBuild, 'index.html'));
+  });
+}
 
 mongoose
   .connect(process.env.MONGO_CONN_STRING, {
