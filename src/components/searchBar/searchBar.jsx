@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { logSearch } from '../../services/fetchData';
 
-const SearchBar = ({ getWantedArticles }) => {
+const SearchBar = ({ getWantedArticles, onAddValue }) => {
   const [inputError, setInputError] = useState('');
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
+    e.target.searchInput.value = '';
     e.preventDefault();
     if (inputValue.length === 0) setInputError('empty');
-    else getWantedArticles(inputValue);
+    else {
+      getWantedArticles(inputValue);
+      logSearch({ title: inputValue });
+    }
   };
 
   const validateInput = (value) => {
@@ -38,7 +43,7 @@ const SearchBar = ({ getWantedArticles }) => {
                 setInputValue(e.target.value);
                 validateInput(e.target.value);
               }}
-              className={`form-control mr-sm-2 ${inputError !== '' ? 'error' : ''}`}
+              className={`form-control input-field mr-sm-2 ${inputError !== '' ? 'error' : ''}`}
               type='search'
               name='searchInput'
               placeholder='Search for articles...'

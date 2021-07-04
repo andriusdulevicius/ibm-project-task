@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SearchBar from './components/searchBar/searchBar';
-import Articles from './components/articles/articles';
-import getArticles from './services/fetchData';
-// import dummyArt from './dummyData.json';
+import MainPage from './components/MainPage/MainPage';
+import Stats from './components/Stats/Stats';
 
 const App = () => {
-  const [articles, setArticles] = useState([]);
-
-  const getAllArticles = async (searchingFor) => {
-    const fetchedData = await getArticles(searchingFor);
-    console.log(fetchedData);
-    // const fetchedArt = dummyArt;
-    setArticles(fetchedData.articles);
-  };
   return (
-    <div className='App'>
-      <SearchBar getWantedArticles={getAllArticles} />
-      <Articles articles={articles} />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/stats'>
+          <Stats />
+        </Route>
+        <Route path='/'>
+          <MainPage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 

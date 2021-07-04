@@ -1,5 +1,5 @@
 import React from 'react';
-import Article from '../article/article';
+import Article from '../Article/Article';
 
 const Articles = ({ articles }) => {
   return (
