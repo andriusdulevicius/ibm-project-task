@@ -8,10 +8,9 @@ const path = require('path');
 const PORT = process.env.PORT || 5000;
 
 app.use(
-  cors()
-  // {
-  //   origin: 'https://ibm-project-user-actions.herokuapp.com/',
-  // }
+  cors({
+    origin: 'https://ibm-project-user-actions.herokuapp.com/',
+  })
 );
 
 app.use(express.json());

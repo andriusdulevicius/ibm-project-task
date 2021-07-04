@@ -1,0 +1,42 @@
+.navbar-style {
+  background-color: rgba(184, 175, 175, 0.829);
+}
+
+.navbar-title {
+  font-size: 2rem;
+  align-self: center;
+  color: #007bff;
+}
+
+.navbar-title:hover {
+  text-decoration: none;
+  opacity: 0.6;
+  color: #00ccff;
+}
+
+.input-field {
+  min-width: 271px;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.main-form {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-block {
+  position: relative;
+}
+
+.input-block span {
+  font-size: 14px;
+  position: absolute;
+  top: -22px;
+}

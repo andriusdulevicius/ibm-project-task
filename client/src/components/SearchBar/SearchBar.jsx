@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { logSearch } from '../../services/fetchData';
+import { Link } from 'react-router-dom';
+import './SearchBar.css';
 
-const SearchBar = ({ getWantedArticles, onAddValue }) => {
+const SearchBar = ({ getWantedArticles }) => {
   const [inputError, setInputError] = useState('');
   const [inputValue, setInputValue] = useState('');
 
@@ -25,7 +27,7 @@ const SearchBar = ({ getWantedArticles, onAddValue }) => {
     <header className='navbar-style'>
       <div className='container search-bar'>
         <a className='navbar-title' href='/'>
-          IBM articles search
+          <strong>IBM</strong> articles <strong>search</strong>
         </a>
         <form onSubmit={handleSubmit} className='main-form'>
           <div className='input-block mr-2 mb-2'>
@@ -54,7 +56,9 @@ const SearchBar = ({ getWantedArticles, onAddValue }) => {
             <button className='btn btn-outline-primary  ' type='submit'>
               Search
             </button>
-            <button className='btn btn-primary  ml-2'>Most popular articles</button>
+            <Link to='/stats' className='btn btn-primary  ml-2'>
+              Search history statistics
+            </Link>
           </div>
         </form>
       </div>
