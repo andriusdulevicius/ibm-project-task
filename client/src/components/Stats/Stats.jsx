@@ -26,19 +26,19 @@ const Stats = () => {
           className={(activeTable === 'searches' ? 'active' : '') + ' btn btn-primary m-3'}
           onClick={() => setActiveTable('searches')}
         >
-          Searched words statistics on this app
+          Searched words
         </button>
         <button
           className={(activeTable === 'articles' ? 'active' : '') + ' btn btn-primary m-3'}
           onClick={() => setActiveTable('articles')}
         >
-          Visited articles statistics
+          Visited articles
         </button>
+        <Link to='/' className='btn btn-success m-3'>
+          Go back
+        </Link>
       </div>
       {data && <Table data={activeTable === 'searches' ? data.searches : data.articles} />}
-      <Link to='/' className='btn btn-success float-right mr-2'>
-        Go back
-      </Link>
     </div>
   );
 };

@@ -53,10 +53,10 @@ const SearchBar = ({ getWantedArticles }) => {
             />
           </div>
           <div>
-            <button className='btn btn-outline-primary  ' type='submit'>
+            <button className='btn btn-primary  ' type='submit'>
               Search
             </button>
-            <Link to='/stats' className='btn btn-primary  ml-2'>
+            <Link to='/stats' className='btn btn-outline-primary  ml-2'>
               Search history statistics
             </Link>
           </div>

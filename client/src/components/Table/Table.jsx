@@ -19,7 +19,7 @@ function Table({ data }) {
       <thead>
         <tr>
           {Object.keys(cleanData[0]).map((key) => (
-            <th key={key}>{key.toUpperCase()}</th>
+            <th key={key}>{key === 'updatedAt' ? 'LAST UPDATED' : key.toUpperCase()}</th>
           ))}
         </tr>
       </thead>
@@ -27,7 +27,21 @@ function Table({ data }) {
         {cleanData.map((entry) => (
           <tr key={entry.updatedAt}>
             {Object.entries(entry).map(([key, value]) => (
-              <td key={key}>{key === 'url' ? <a href={value}>{value}</a> : value}</td>
+              <td key={key}>
+                {key === 'url' ? (
+                  <a href={value}>{value}</a>
+                ) : key === 'updatedAt' ? (
+                  new Date(value).toLocaleString('en-GB', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })
+                ) : (
+                  value
+                )}
+              </td>
             ))}
           </tr>
         ))}
