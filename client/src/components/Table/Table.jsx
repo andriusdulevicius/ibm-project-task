@@ -30,7 +30,9 @@ function Table({ data }) {
             {Object.entries(entry).map(([key, value]) => (
               <td key={key}>
                 {key === 'url' ? (
-                  <a href={value}>{value}</a>
+                  <a href={value} target='_blank' rel='noreferrer'>
+                    Go to original article
+                  </a>
                 ) : key === 'updatedAt' ? (
                   new Date(value).toLocaleString('en-GB', {
                     year: 'numeric',

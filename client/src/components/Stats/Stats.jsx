@@ -20,7 +20,7 @@ const Stats = () => {
   }, []);
 
   return (
-    <div className='stats'>
+    <div className='stats d-flex'>
       <div className='controls d-flex'>
         <button
           className={(activeTable === 'searches' ? 'active' : '') + ' btn btn-primary m-3'}
