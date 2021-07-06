@@ -1,8 +1,8 @@
 /* Error styles */
 .error-msg {
-  color: red;
+  color: rgb(190, 0, 0);
 }
 
-.error {
-  border: 2px solid red;
+.error:focus {
+  border: 2px solid rgb(190, 0, 0) !important;
 }

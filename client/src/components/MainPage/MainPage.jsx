@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './MainPage.css';
+import './MainPage.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Articles from '../Articles/Articles';
 import { getArticles } from '../../services/fetchData';
@@ -13,7 +13,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className='MainPage'>
+    <div id='home' className='MainPage'>
       <SearchBar getWantedArticles={getAllArticles} />
       <Articles articles={articles} />
     </div>

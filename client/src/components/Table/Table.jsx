@@ -1,4 +1,5 @@
 import React from 'react';
+import './Table.css';
 
 const ignoreDataList = ['_id', 'createdAt', '__v'];
 const getCleanData = (data) => {

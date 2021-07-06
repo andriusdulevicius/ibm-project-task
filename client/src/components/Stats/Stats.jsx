@@ -21,7 +21,7 @@ const Stats = () => {
 
   return (
     <div className='stats'>
-      <div className='controls'>
+      <div className='controls d-flex'>
         <button
           className={(activeTable === 'searches' ? 'active' : '') + ' btn btn-primary m-3'}
           onClick={() => setActiveTable('searches')}
